@@ -18,6 +18,7 @@
 #define GLUE_SERVICE_C
 
 #include <stdbool.h>
+#include "log.h"
 
 #ifdef ANDROID
 #include <android/log.h>
@@ -207,9 +208,8 @@ int16_t SpiceGlibGlue_Connect(char* host,
 {
     int result = 0;
 
-    SPICE_DEBUG("SpiceClientConnect session_setup");
-    spice_warning("SpiceClientConnect ", "session_setup");
-    
+    spice_warning("SpiceClientConnect %s", "session_setup");
+
     mainconn = spice_connection_new();
     spice_connection_setup(mainconn, host,
 			port, tls_port, ws_port,
