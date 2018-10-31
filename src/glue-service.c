@@ -208,7 +208,8 @@ int16_t SpiceGlibGlue_Connect(char* host,
     int result = 0;
 
     SPICE_DEBUG("SpiceClientConnect session_setup");
-    printf("SpiceGlibGlue_Connect session_setup %s", "");
+    spice_warning("SpiceClientConnect ", "session_setup");
+    
     mainconn = spice_connection_new();
     spice_connection_setup(mainconn, host,
 			port, tls_port, ws_port,
