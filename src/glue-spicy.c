@@ -374,7 +374,7 @@ void spice_session_setup(SpiceSession *session, const char *host,
 			 const char *ca_file,
 			 const char *cert_subj) {
 
-    SPICE_DEBUG("spice_session_setup host=%s, ws_port=%s, port=%s, tls_port=%s", host, ws_port, port, tls_port);
+    SPICE_DEBUG("spice_session_setup host=%s, ws_port=%s, port=%s, tls_port=%s, ca_file=%s, cert_subj=%s", host, ws_port, port, tls_port, ca_file, cert_subj);
     g_return_if_fail(SPICE_IS_SESSION(session));
     
     if (host)
